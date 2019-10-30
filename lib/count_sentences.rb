@@ -15,7 +15,8 @@ class String
   end
 
   def count_sentences
-    str = self.each_char{|c| c = "." if c == ("!" || "?")}
+    replacement = {"!" => ".", "?" => "."}
+    new_self = self.split('').map{|i| replacement[i] || i}.join
     binding.pry 
     
   end
